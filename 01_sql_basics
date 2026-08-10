@@ -1,1 +1,128 @@
+CREATE DATABASE Company;
+use Company;
+
+-- SELECT statement
+-- is used to select data from a database.
+
+-- Select all columns
+select * 
+from customers_db;
+
+-- Select Specific column 
+SELECT customerName, ContactName 
+from customers_db;
+
+-- DISTINCT
+-- used to return only distinct (unique) values
+SELECT DISTINCT City 
+FROM customers_db;
+
+-- using count() function with distinct 
+-- count the number of unique cities
+SELECT COUNT(DISTINCT City) FROM customers_db;
+
+--  WHERE Clause
+-- WHERE clause is used to filter records
+SELECT * 
+FROM customers_db
+WHERE City = 'Berlin';
+
+
+SELECT * 
+FROM customers_db
+WHERE CustomerID > 112;
+
+-- BETWEEN
+-- Returns Values within a specified range
+SELECT * 
+FROM customers_db
+WHERE  CustomerID  BETWEEN 101  AND 120;
+
+-- LIKE 
+-- Used for pattern matching
+SELECT * FROM customers_db
+WHERE City LIKE 'B%';
+
+
+-- IN
+-- Checks whether a value matches any value in a list.
+SELECT * 
+FROM customers_db
+WHERE City IN('Bern','Berlin');
+
+-- ORDER BY 
+-- it is used to sort the result-set 
+-- ascending or descending order.
+
+SELECT * FROM customers_db
+WHERE Salary > 12003
+order by salary DESC;
+
+SELECT * FROM  customers_db
+ORDER BY Address DESC;
+
+SELECT * FROM Customers_db
+ORDER BY CustomerName DESC, City ASC; 
+
+-- AND Operator
+-- AND returns a record only when ALL conditions are TRUE.
+
+SELECT * FROM Customers_db
+WHERE CustomerName 	LIKE 'A%' AND  City = 'Bern';
+
+
+-- OR Operator
+-- OR operator displays a record if any of the Conditions are TRUE
+SELECT * 
+FROM Customers_db
+WHERE City ='Berlin' OR  City = 'Bern';
+
+SELECT * 
+FROM Customers_db
+WHERE Country = 'Germany' OR City = 'Bern';
+
+
+-- Combining AND and OR
+SELECT * FROM Customers_db
+WHERE Country = 'Germany' AND (City Like 'B%' OR CustomerName = 'A%');
+
+
+-- NOT Operator
+-- NOT returns records that DO NOT match a condition.
+SELECT * 
+FROM Customers_db
+WHERE NOT Country = 'Mexico';
+
+
+-- NOT LIKE
+SELECT * 
+FROM Customers_db
+WHERE Country NOT LIKE 'A%';
+
+
+-- NOT BETWEEN
+SELECT *
+ FROM Customers_db
+WHERE CustomerID NOT BETWEEN 12 AND 28;
+
+-- NOT IN
+SELECT * 
+FROM Customers_db
+WHERE City NOT IN ('Mexico City','Lulea');
+
+-- NOT with a comparison condition
+SELECT * 
+FROM Customers_db
+WHERE  NOT Salary < 11244;
+
+
+
+
+
+
+
+
+
+
+
 
