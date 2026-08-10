@@ -1,0 +1,68 @@
+-- INSERT INTO STATEMENT
+-- INSERT INTO is used to add new records to a table.
+
+INSERT INTO Customers_db 
+(CustomerID,CustomerName,ContactName,Address,City,PostalCode,Country,Salary)
+VALUES
+('1001','ram','Ramesh joshi','Haldwani','Haldwani','58694','India',125496),
+(1002, 'Priya', 'Priya Sharma', 'Civil Lines', 'Delhi', '110054', 'India', 85000),
+(1003, 'Arjun', 'Arjun Mehta', 'MG Road', 'Bengaluru', '560001', 'India', 112000),
+(1004, 'Neha', 'Neha Verma', 'Park Street', 'Kolkata', '700016', 'India', 76000),
+(1005, 'Vikram', 'Vikram Singh', 'Andheri West', 'Mumbai', '400058', 'India', 98000),
+(1006, 'Sneha', 'Sneha Kapoor', 'Gomti Nagar', 'Lucknow', '226010', 'India', 92000),
+(1007, 'Rahul', NULL, 'MG Road', 'Delhi', '110001', 'India', 75000);
+
+-- Easy Rule to Remember
+/*
+Text → 'quotes'
+Number → no quotes
+Date → 'quotes'
+NULL → NULL without quotes
+*/
+
+-- NULL Value
+
+/*
+NULL means a value is missing, unknown, or not available in a database.
+NULL is not a value itself.
+NULL is not 0.
+NULL is not an empty string ''.
+
+A column can contain NULL when no value was provided.
+*/
+
+select *
+FROM Customers_db
+WHERE ContactName IS NULL;
+
+-- UPDATE Statement
+-- the UPDATE is used to update  or modify one or more records in a table
+
+UPDATE Customers_db
+SET ContactName='Rohan'
+WHERE CustomerID = 1007;
+
+
+-- Updating multiple columns
+UPDATE Customers_db
+SET  City = 'Delhi',
+Salary = 125466
+WHERE CustomerID = 1001; 
+
+
+-- DELETE Statement
+-- The DELETE statement is used to delete existing records in a table.
+
+DELETE FROM  Customers_db
+WHERE CustomerID = 1007;
+
+-- WARNING:
+-- The following query deletes ALL records from the table.
+-- Do NOT execute unless you intentionally want to remove all data.
+
+ DELETE FROM  Customers_db;
+ 
+ -- DROP TABLE
+-- DROP TABLE completely removes the table and its structure.
+
+ DROP TABLE Customers_db;
