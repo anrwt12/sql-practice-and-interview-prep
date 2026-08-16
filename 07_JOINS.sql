@@ -46,13 +46,34 @@ INNER JOIN Orders AS o
 ON c.CustomerID = o.CustomerID;
 
 -- Find customers who have placed orders:
+SELECT c.CustomerName,o.OrderID
+FROM Customers_db AS c
+INNER JOIN Orders AS o 
+ON c.CustomerID = o.CustomerID;
 
 
 -- Find the total amount ordered by each customer:
-
+SELECT c.CustomerID,c.CustomerName,SUM(o.Amount) as Total_amount
+FROM Customers_db AS c
+JOIN Orders AS o
+ON c.CustomerID=o.CustomerID
+GROUP BY 
+ c.CustomerID,c.CustomerName
+;
 
 --  Find customers from a specific city who placed orders
+SELECT c.CustomerID,c.CustomerName,C.City, o.Product
+FROM Customers_db AS c
+JOIN Orders AS o
+ON c.CustomerID=o.CustomerID
+WHERE c.City = 'Bern';
 
+-- Find orders greater than ₹10,000
+SELECT c.CustomerID,c.CustomerName,o.Amount
+FROM Customers_db AS c
+JOIN Orders AS o
+ON c.CustomerID=o.CustomerID
+WHERE o.Amount > 10000 ;
 
 
 -- Find orders greater than ₹10,000
