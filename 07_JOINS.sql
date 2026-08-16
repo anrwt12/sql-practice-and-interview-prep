@@ -140,7 +140,7 @@ c.CustomerName,c.City,
 c.CustomerID;
 
 
-           -- RIGHT JOIN
+            -- RIGHT JOIN
 -- syntax
 
 -- SELECT columns
@@ -148,6 +148,46 @@ c.CustomerID;
 -- RIGHT JOIN table2
 -- ON table1.common_column = table2.common_column
 
+
+-- Find all orders along with the customer name, including orders that do not have a matching customer.
+
+-- Find all orders with an amount greater than ₹10,000, including orders without matching customer information.
+-- Find all orders associated with customers from Bern, including orders whose customer information does not exist.
+-- Find the total amount of orders for each customer, including orders that do not have a matching customer.
+-- Find all orders where the customer information is missing.
+
+
+      -- FULL OUTER JOIN
+-- syntax
+
+-- SELECT columns
+-- FROM table1
+-- FULL OUTER JOIN table2
+-- ON table1.common_column = table2.common_column
+
+
+
+-- Find all customers and all orders, including records that do not have a matching record in the other table.
+-- Find all customers and orders where the CustomerID matches, while also including unmatched customers and unmatched orders.
+-- Find all customers and orders, showing CustomerName, OrderID, Product, and Amount, including unmatched records from both tables.
+-- Find the total order amount for each customer, including customers with no orders and orders with no matching customer.
+-- Find all records where there is no matching customer or no matching order between the two tables.
+
+
+         -- SELF JOIN
+-- syntax
+
+-- SELECT columns
+-- FROM table1 AS t1
+-- JOIN table1 AS t2
+-- ON t1.common_column = t2.common_column;
+
+
+-- Find employees who have the same city as another employee.
+-- Find pairs of customers who are from the same city.
+-- Find customers who have the same country as another customer.
+-- Find pairs of customers who have the same salary.
+-- Find pairs of customers who are from the same city but have different customer IDs.
 
 
 
